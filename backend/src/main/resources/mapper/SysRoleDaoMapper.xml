@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yier.dao.SysRoleDao">
+
+    <!-- 结果映射 -->
+    <resultMap id="BaseResultMap" type="com.yier.entity.SysRole">
+        <id column="id" property="id"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_key" property="roleKey"/>
+        <result column="role_sort" property="roleSort"/>
+        <result column="data_scope" property="dataScope"/>
+        <result column="status" property="status"/>
+        <result column="remark" property="remark"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!-- 根据用户ID查询角色列表 -->
+    <select id="selectRolesByUserId" resultMap="BaseResultMap">
+        SELECT r.*
+        FROM sys_role r
+                 INNER JOIN sys_user_role ur ON r.id = ur.role_id
+        WHERE ur.user_id = #{userId}
+          AND ur.deleted = 0
+          AND r.deleted = 0
+    </select>
+
+    <!-- 根据用户ID查询角色ID列表 -->
+    <select id="selectRoleIdsByUserId" resultType="java.lang.Long">
+        SELECT role_id
+        FROM sys_user_role
+        WHERE user_id = #{userId}
+          AND deleted = 0
+    </select>
+
+    <!-- 分页查询角色列表 -->
+    <select id="selectRolePage" resultMap="BaseResultMap">
+        SELECT *
+        FROM sys_role
+        WHERE deleted = 0
+        <if test="roleName != null and roleName != ''">
+            AND role_name LIKE CONCAT('%', #{roleName}, '%')
+        </if>
+        <if test="status != null">
+            AND status = #{status}
+        </if>
+        ORDER BY role_sort ASC
+    </select>
+
+    <!-- 根据角色ID查询权限ID列表 -->
+    <select id="selectPermissionIdsByRoleId" resultType="java.lang.Long">
+        SELECT permission_id
+        FROM sys_role_permission
+        WHERE role_id = #{roleId}
+          AND deleted = 0
+    </select>
+
+</mapper>

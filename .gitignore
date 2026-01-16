@@ -1,0 +1,19 @@
+# 编译输出
+backend/target/
+web-admin/dist/
+web-admin/node_modules/
+
+# 日志文件
+*.log
+
+# IDE 配置
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# 临时文件
+*.tmp
+*.swp
+*~
+.claude/settings.local.json

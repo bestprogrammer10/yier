@@ -1,0 +1,252 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * 全局样式文件
+ * 遵循 KISS 原则：只定义必要的全局样式
+ */
+
+/* 每一个页面都有的公共css放在这里 */
+
+/**
+ * 全局通用样式
+ * 遵循 KISS 原则：只定义必要的全局样式
+ */
+
+/* 重置样式 */
+view, text, image, button, input, checkbox, radio, label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* 按钮基础样式重置 */
+button::after {
+  border: none;
+}
+button {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  line-height: normal;
+}
+
+/* 输入框样式重置 */
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+/* 图片默认样式 */
+image {
+  display: block;
+}
+
+/* 文本溢出处理 */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 常用工具类 */
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 颜色工具类 */
+.text-white { color: #FFFFFF;
+}
+.text-gray { color: #94A3B8;
+}
+.text-primary { color: #2E5BFF;
+}
+.text-success { color: #07C160;
+}
+.text-danger { color: #FF4757;
+}
+.bg-primary { background: #2E5BFF;
+}
+.bg-success { background: #07C160;
+}
+.bg-danger { background: #FF4757;
+}
+
+/* 边距工具类 */
+.mt-10 { margin-top: 20rpx;
+}
+.mb-10 { margin-bottom: 20rpx;
+}
+.ml-10 { margin-left: 20rpx;
+}
+.mr-10 { margin-right: 20rpx;
+}
+.p-10 { padding: 20rpx;
+}
+.pt-10 { padding-top: 20rpx;
+}
+.pb-10 { padding-bottom: 20rpx;
+}
+
+/* 圆角工具类 */
+.radius-sm { border-radius: 8rpx;
+}
+.radius-md { border-radius: 16rpx;
+}
+.radius-lg { border-radius: 24rpx;
+}
+.radius-full { border-radius: 999rpx;
+}
+
+/* 阴影工具类 */
+.shadow-sm { box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+.shadow-md { box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.15);
+}
+.shadow-lg { box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
+}
+
+/* 文本对齐 */
+.text-center { text-align: center;
+}
+.text-left { text-align: left;
+}
+.text-right { text-align: right;
+}
+
+/* 字体大小 */
+.font-xs { font-size: 20rpx;
+}
+.font-sm { font-size: 24rpx;
+}
+.font-md { font-size: 28rpx;
+}
+.font-lg { font-size: 32rpx;
+}
+.font-xl { font-size: 36rpx;
+}
+.font-xxl { font-size: 40rpx;
+}
+
+/* 字体粗细 */
+.font-normal { font-weight: 400;
+}
+.font-medium { font-weight: 500;
+}
+.font-bold { font-weight: 600;
+}
+.font-heavy { font-weight: 700;
+}
+page {
+  background-color: #0F172A;
+  color: #FFFFFF;
+}
+
