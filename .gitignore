@@ -2,6 +2,7 @@
 backend/target/
 web-admin/dist/
 web-admin/node_modules/
+uniapp/unpackage/
 
 # 日志文件
 *.log
